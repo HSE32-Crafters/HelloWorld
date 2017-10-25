@@ -1,0 +1,15 @@
+.center{
+	text-align: center;
+}
+
+h1{
+	background-color: #00FF00;
+	width: 1280px;
+	height: 100px;
+	margin: 20px;
+	padding: 5px;
+}
+
+body{
+	background-color: #FFFACD;
+}

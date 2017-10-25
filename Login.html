@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<link rel = "stylesheet" href="Login.css">
+	<title>StockTradingSystem</title>
+	<script type = "text/javascript">
+	function RegularExpression(){
+		//正規パターン　大文字小文字を意識しない「HSE」
+		var wCheck = new RegExp("HSE", "i");
+		var wPassWord = LoginForm.PassWord.value;
+		// HSEという単語が含まれているかチェック
+		var wResult = wPassWord.match(wCheck);
+		
+		if(wResult == null){
+			window.alert("パスワードが間違っております。");
+			wResult = false;
+		}else{
+			window.alert("ログインします。");
+			wResult = true;
+		}
+		
+		return wResult;
+	}
+	</script>
+</head>
+
+<body>
+	
+	<h1 class = "center" style = "margin-bottom:2em;">ログイン</h1>
+	<!-- ログインに成功した場合のhtmlファイル指定予定 -->
+	<form name = "LoginForm" onsubmit = "return RegularExpression()" action = "Login.html" class = "center">
+		ユーザ名　　　　　　<input type="text" name="UserName" value=""></br>
+		パスワード　　　　　<input type="text" name="PassWord" value=""></br></br>
+		<input type="submit" value="ログイン"/></br>
+	</form>
+</body>
+</html>
