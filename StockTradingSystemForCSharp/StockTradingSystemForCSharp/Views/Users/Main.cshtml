@@ -1,0 +1,189 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="stylesheet" href="./Css/Main.css"> -->
+    <script src="../Scripts/Chart.js"></script>
+    <style type="text/css">
+        /* タブメニュー全体の設定 */
+        div.tabbox {
+            margin: 15px 0 0 0;
+            padding: 0px;
+            width: 800px;
+            height: 600px;
+        }
+
+        /* タブ部分のマージンとパディング領域を設定 */
+        p.tabs {
+            margin: 0px;
+            padding: 0px;
+        }
+
+            p.tabs a {
+                display: block;
+                width: 100px;
+                float: left;
+                margin: 0px 3px 0px 0px;
+                padding: 3px;
+                text-align: center;
+                font-size: 12px;
+            }
+
+                /* タブごとの配色設定 */
+                p.tabs a.graphtab {
+                    text-decoration: none;
+                    background-color: #fafafa;
+                    border-right: 1px solid #dcdcdc;
+                    border-left: 1px solid #dcdcdc;
+                    border-top: 3px solid rgba(170, 0, 0, 0.85);
+                    color: #666;
+                    font-weight: 600;
+                }
+
+                p.tabs a.datatab {
+                    text-decoration: none;
+                    background-color: #fafafa;
+                    border-right: 1px solid #dcdcdc;
+                    border-left: 1px solid #dcdcdc;
+                    border-top: 3px solid rgba(0, 170, 0, 0.85);
+                    color: #666;
+                    font-weight: 600;
+                }
+
+                p.tabs a.infomationtab {
+                    text-decoration: none;
+                    background-color: #fafafa;
+                    border-right: 1px solid #dcdcdc;
+                    border-left: 1px solid #dcdcdc;
+                    border-top: 3px solid rgba(0, 0, 170, 0.85);
+                    color: #666;
+                    font-weight: 600;
+                }
+
+                p.tabs a:hover {
+                    opacity: 0.7;
+                    filter: alpha(opacity=70);
+                }
+
+        /* タブ中身のボックス */
+        div.tab {
+            height: 600px;
+            clear: left;
+        }
+
+        /* 各ボックスの配色設定 */
+        div#graphtab {
+            border: 2px solid #DDD;
+            background-color: #fbfbfb;
+        }
+
+        div#datatab {
+            border: 2px solid #DDD;
+            background-color: #fbfbfb;
+        }
+
+        div#infomationtab {
+            border: 2px solid #DDD;
+            background-color: #fbfbfb;
+        }
+
+        div.tab p {
+            margin: 0.5em;
+        }
+
+        img {
+            float: right;
+        }
+
+    </style>
+    <title>StockTradingSystem</title>
+    <script type="text/javascript">
+        function CreateGraph() {
+
+            var data = {
+                labels: ["１月", "２月", "３月", "４月", "５月", "６月", "７月"],
+                datasets: [
+                  {
+                      label: "数量",
+                      hoverBackgroundColor: "rgba(255,132,50,255)",
+                      backgroundColor: "rgba(255, 123, 123, 123)",
+                      data: [65, 59, 80, 81, 56, 55, 48],
+                  }
+                ]           
+            };
+
+            var options = {
+                title: {    
+                    display: true,
+                    text: 'サンプルチャート'
+                }
+            };
+
+            var myChart = new Chart(document.getElementById("wCanvas"),{
+                    type: "bar",
+                    data: data,
+                    option: options
+                });
+        }
+
+        function ChangeTab(pLabelName, pTabName) {
+
+            document.getElementById("graphlabel").style.background = "white";
+            document.getElementById("datalabel").style.background = "white";
+            document.getElementById("infomationlabel").style.background = "white";
+
+            document.getElementById("graphtab").style.display = "none";
+            document.getElementById("datatab").style.display = "none";
+            document.getElementById("infomationtab").style.display = "none";
+
+            document.getElementById(pLabelName).style.backgroundColor = "rgba(123,123,123,0.3)";
+            document.getElementById(pTabName).style.display = "block";
+
+        }
+    </script>
+</head>
+<body>
+    <div class="tabbox">
+        <p class="tabs">
+            <a href="#graphtab" id="graphlabel" class="graphtab" onclick="ChangeTab('graphlabel', 'graphtab'); return false;">グラフ</a>
+            <a href="#datatab" id="datalabel" class="datatab" onclick="ChangeTab('datalabel', 'datatab'); return false;">データ</a>
+            <a href="#infomationtab" id="infomationlabel" class="infomationtab" onclick="ChangeTab('infomationlabel', 'infomationtab'); return false;">情報</a>
+        </p>
+        <div id="graphtab" class="tab">
+            <p>
+                ここに取得したデータを加工して表示する予定
+                折れ線なのか棒なのか分からんがグラフを表示
+                <canvas id="wCanvas" width="480" height="320"></canvas>
+
+            </p>
+        </div>
+        <div id="datatab" class="tab">
+            <p>
+                他社との比較かな、散布図とかの表示かな
+            </p>
+        </div>
+        <div id="infomationtab" class="tab">
+            <p>
+                企業情報を表示される予定
+            </p>
+            <img src="../image/trader.png" />
+        </div>
+    </div>
+
+
+    <!-- タブの初期表示 -->
+    <script type="text/javascript">
+        ChangeTab('graphlabel', 'graphtab');
+        CreateGraph();
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model StockTradingSystemForCSharp.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+    <!---->
+
+
+<!DOCTYPE html>
+    
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <h2>ログイン画面</h2>
+    <!--フォーム作成-->
+    @using (@Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <table>
+            <tr>
+               <th>ユーザID</th>
+                <!-- テキストボックス作成 -->
+                <td>@Html.TextBoxFor(model => model.UserID)</td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td>@Html.TextBoxFor(model => model.Password)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(model => model.RememberMe)
+                        ログインしたままにする。
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:right;">
+                    <input type="submit" value="ログイン"/>
+                </td>
+            </tr>
+        </table>
+    }           
+</body>
+</html>
