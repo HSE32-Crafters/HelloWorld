@@ -1,0 +1,22 @@
+﻿header {
+    background-color: #b6ff00;
+    padding: 10px;
+}
+body {
+    background-color: #feea7b;
+    width: auto;
+    height: auto;
+}
+
+table{
+    background-color: white;
+    padding: 200px;
+    empty-cells: show;
+
+}
+
+footer {
+    background-color: #b6ff00;
+    padding: 10px;
+    text-align: right;
+}

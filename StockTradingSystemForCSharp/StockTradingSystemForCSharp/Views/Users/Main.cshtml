@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    <link href="../Css/TabStyleSheet.css" type="text/css" rel="stylesheet">
+    <script src="../Scripts/chart.js"></script>
+
+    <script type="text/javascript">
+        // タブの切り替え
+        function ChangeTab(pTabName, pTabForm) {
+            // タブ実装
+            document.getElementById('graph').style.backgroundColor = 'rgba(123, 123, 123, 25)';
+            document.getElementById('data').style.backgroundColor = 'rgba(123, 123, 123, 25)';
+            document.getElementById('infomation').style.backgroundColor = 'rgba(123, 123, 123, 25)';
+            // タブ実装
+            document.getElementById(pTabName).style.backgroundColor = 'white';
+
+
+            // タブフォーム実装
+            document.getElementById('graphform').style.display = 'none';
+            document.getElementById('dataform').style.display = 'none';
+            document.getElementById('infomationform').style.display = 'none';
+            // タブフォーム実装
+            document.getElementById(pTabForm).style.display = 'block';
+        }
+        // 棒グラフ作成
+        function CreateGraph() {
+            var data = {
+                labels: ["１月", "２月", "３月", "４月", "５月", "６月", "７月"],
+                datasets: [
+                  {
+                      label: '数量',
+                      hoverBackgroundColor: "rgba(255,99,132,0.3)",
+                      data: [65, 59, 80, 81, 56, 55, 48],
+                      backgroundColor: "rgba(255, 255, 123, 255)",
+                  }
+                ]
+            };
+
+            // オプション設定
+            var options = {
+                title: {
+                    display: true,
+                    text: 'サンプルチャート'
+                }
+            };
+
+            var chart = new Chart(document.getElementById("BarGraph"), {
+                type: 'bar',  //グラフの種類
+                data: data,  //表示するデータ
+                options: options,  //オプション設定
+            });
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="tabbox">
+
+        <p class="tabs">
+            <a href="#graphform" id="graph" class="graphtab" onclick="ChangeTab('graph', 'graphform'); return false;">グラフ</a>
+            <a href="#dataform" id="data" class="datatab" onclick="ChangeTab('data', 'dataform'); return false;">データ</a>
+            <a href="#infomationform" id="infomation" class="infomationtab" onclick="ChangeTab('infomation', 'infomationform'); return false;">情報</a>
+        </p>
+        <div id="graphform" class="tab">
+            グラフを描画するフォーム
+            <!--描画領域 -->
+            <canvas id="BarGraph" height="450" width="800"></canvas>
+        </div>
+
+        <div id="dataform" class="tab">
+            別のグラフを描画するフォーム
+        </div>
+
+        <div id="infomationform" class="tab">
+            企業情報を表示する画面
+            <img src="../image/kabu.png"/>
+        </div>
+    </div>
+
+        <!-- ページを開いた際の最初に表示されるタブの選択 -->
+        <script type="text/javascript">
+            ChangeTab('graph', 'graphform');
+            CreateGraph();
+        </script>
+        <div>
+        </div>
+
+</body>
+</html>

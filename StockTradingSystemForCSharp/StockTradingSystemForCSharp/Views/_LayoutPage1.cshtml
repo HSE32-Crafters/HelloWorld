@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!--ViewBagはC#のObject型みたいに使える、グローバル変数のように扱える-->
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <!--対象のViewファイルがバインドされる-->
+        @RenderBody()
+    </div>
+</body>
+</html>
