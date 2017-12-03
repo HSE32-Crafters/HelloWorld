@@ -1,48 +1,44 @@
 ﻿@model StockTradingSystemForCSharp.Models.User
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "ログイン";
+    Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-    <!---->
+<!--＠Html.ValidationSummary()-->
 
 
 <!DOCTYPE html>
-    
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../Css/LoginStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="../Css/FormStyleSheet.css">
 </head>
 <body>
-    <h2>ログイン画面</h2>
     <!--フォーム作成-->
     @using (@Html.BeginForm())
     {
-        @Html.ValidationSummary(true)
-        <table>
+        <table align="center">
             <tr>
-               <th>ユーザID</th>
+                <th align = "left">ユーザID</th>
                 <!-- テキストボックス作成 -->
-                <td>@Html.TextBoxFor(model => model.UserID)</td>
+                <td>@Html.TextBoxFor(model => model.UserID, new { size = 40 })</td>
             </tr>
             <tr>
-                <th>パスワード</th>
-                <td>@Html.TextBoxFor(model => model.Password)</td>
+                <th align = "left">パスワード</th>
+                <td>@Html.PasswordFor(model => model.Password, new { size = 40 })</td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <label>
-                        @Html.CheckBoxFor(model => model.RememberMe)
-                        ログインしたままにする。
-                    </label>
+                <td colspan="2">　</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="2" align = "right">
+                    <input type="submit" value="ログイン" />
                 </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align:right;">
-                    <input type="submit" value="ログイン"/>
-                </td>
-            </tr>
         </table>
-    }           
+    }
 </body>
 </html>

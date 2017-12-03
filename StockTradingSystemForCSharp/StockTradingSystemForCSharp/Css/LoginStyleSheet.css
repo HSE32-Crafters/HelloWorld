@@ -1,0 +1,14 @@
+﻿body {
+    background-color: #feea7b;
+    width: auto;
+    height: auto;
+}
+
+table{
+    background-color: white;
+    padding: 200px;
+    empty-cells: show;
+
+}
+
+

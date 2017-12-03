@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width" />
     <!--ViewBagはC#のObject型みたいに使える、グローバル変数のように扱える-->
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="../Css/FormStyleSheet.css">
 </head>
 <body>
+    <header>
+        <h1 align="center">
+            <img src="../image/kids_chuunibyou_boy.png" width="148" height="160" />
+            @ViewBag.Title
+            <img src="../image/kids_chuunibyou_girl.png" width="152" height="188" />
+        </h1>
+    </header>
+
     <div class="container">
-        <!--対象のViewファイルがバインドされる-->>
+        <!--対象のViewファイルがバインドされる-->
         @RenderBody()
     </div>
+
+    <footer>
+        <h6>copyright HSE32-Crafters</h6>
+    </footer>
 </body>
 </html>

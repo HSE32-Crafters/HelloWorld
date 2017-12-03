@@ -125,9 +125,13 @@ namespace StockTradingSystemForCSharp.Controllers
         [HttpPost]
         public ActionResult Login(User model, string returnUrl)
         {
-            if (model.UserID == "福島大学" && model.Password == "福島大学")
+            var LoginUser = from lu in db.Users where lu.UserID == model.UserID && lu.Password == model.Password
+                            select lu;
+
+            if (LoginUser.Count() > 0)
             {
                 // ユーザ認証　成功
+                model.RememberMe = true;
                 FormsAuthentication.SetAuthCookie(model.UserID, model.RememberMe);
                 return this.Redirect(returnUrl);
             }
@@ -144,6 +148,7 @@ namespace StockTradingSystemForCSharp.Controllers
         {
             return View();
         }
+
 
         protected override void Dispose(bool disposing)
         {
