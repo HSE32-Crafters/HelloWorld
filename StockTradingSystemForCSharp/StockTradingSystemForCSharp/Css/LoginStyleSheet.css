@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 ﻿header {
     background-color: #b6ff00;
     padding: 10px;
 }
 body {
+=======
+﻿body {
+>>>>>>> refs/remotes/origin/workspace
     background-color: #feea7b;
     width: auto;
     height: auto;
@@ -15,8 +19,12 @@ table{
 
 }
 
+<<<<<<< HEAD
 footer {
     background-color: #b6ff00;
     padding: 10px;
     text-align: right;
 }
+=======
+
+>>>>>>> refs/remotes/origin/workspace

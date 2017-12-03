@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/* タブメニュー全体の設定 */
 div.tabbox {
     margin: 15px 0 0 0;
@@ -5,6 +6,33 @@ div.tabbox {
     width: 800px;
     height: 600px;
 }
+=======
+﻿/* メイン画面全体の設定 */
+div.wrapper{
+    margin: 10px 0 10px 0px;
+    padding: 0px;
+    width: auto;
+    height: 768px;
+    border: 2px solid rgb(255, 0, 0);
+}
+
+/* 操作メニュー全体の設定 */
+div.flame {
+    margin: 15px 15px 0px 15px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+
+/* タブメニュー全体の設定 */
+div.tabbox {
+    margin: 15px 15px 0 15px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}
+
+>>>>>>> refs/remotes/origin/workspace
 /* タブ部分のマージンとパディング領域を設定 */
 p.tabs {
     margin: 0px;
@@ -59,8 +87,14 @@ p.tabs a:hover {
 /* タブ中身のボックス */
 div.tab {
     /* ボックス共通の装飾 */
+<<<<<<< HEAD
     height: 540px;
     clear: left;
+=======
+    height: 700px;
+    clear: left;
+    float: left;
+>>>>>>> refs/remotes/origin/workspace
 }
 /* 各ボックスの配色設定 */
 div#graphform {
@@ -81,3 +115,7 @@ div#infomationform {
 div.tab p {
     margin: 0.5em;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/workspace

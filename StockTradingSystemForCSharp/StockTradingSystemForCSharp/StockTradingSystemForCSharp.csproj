@@ -125,6 +125,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Content Include="Css\FlameStyleSheet.css" />
+    <Content Include="Css\FormStyleSheet.css" />
+>>>>>>> refs/remotes/origin/workspace
     <Content Include="Css\LoginStyleSheet.css" />
     <Content Include="Css\TabStyleSheet.css" />
     <Content Include="Global.asax" />
@@ -155,6 +160,10 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="StockTradingData.cs" />
+>>>>>>> refs/remotes/origin/workspace
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

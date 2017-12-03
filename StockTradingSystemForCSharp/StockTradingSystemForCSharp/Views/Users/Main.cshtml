@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 ﻿
 @{
     Layout = null;
+=======
+﻿@using StockTradingSystemForCSharp;
+@{
+    ViewBag.Title = "株取引システム";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+    StockTradingData a = new StockTradingData();
+>>>>>>> refs/remotes/origin/workspace
 }
 
 <!DOCTYPE html>
@@ -58,6 +66,7 @@
                 options: options,  //オプション設定
             });
         }
+<<<<<<< HEAD
     </script>
 
 
@@ -94,5 +103,58 @@
         <div>
         </div>
 
+=======
+        // テキスト取得
+        function gettxt(pWord) {
+
+            var aaa;
+            //　疎通確認
+            @*{
+               @: aaa = a.b;
+            }*@
+            
+            window.alert(aaa);
+        }
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="flame">
+            <p>取得するページのURLを入力してください。</p>
+            <form name="SearchForm" action="~/Views/Users/Main.cshtml">
+                <input type="text" name="txtUrl" />
+                <input type="button" value="検索" onclick="gettxt(SearchForm.txtUrl.value)"/>
+                <input type="button" value="CSV出力" />
+            </form>
+        </div><br />
+        <div class="tabbox">
+            <p class="tabs">
+                <a href="#graphform" id="graph" class="graphtab" onclick="ChangeTab('graph', 'graphform'); return false;">グラフ</a>
+                <a href="#dataform" id="data" class="datatab" onclick="ChangeTab('data', 'dataform'); return false;">データ</a>
+                <a href="#infomationform" id="infomation" class="infomationtab" onclick="ChangeTab('infomation', 'infomationform'); return false;">情報</a>
+            </p>
+            <div id="graphform" class="tab">
+                グラフを描画するフォーム
+                <!--描画領域 -->
+                <div>
+                    <canvas id="BarGraph" height="450" width="800"></canvas>
+                </div>
+            </div>
+            <div id="dataform" class="tab">
+                別のグラフを描画するフォーム
+            </div>
+            <div id="infomationform" class="tab">
+                企業情報を表示する画面
+                <img src="../image/kabu.png" />
+            </div>
+        </div>
+    </div>
+    <!-- ページを開いた際の最初に表示されるタブの選択 -->
+    <script type="text/javascript">
+        ChangeTab('graph', 'graphform');
+        CreateGraph();
+    </script>
+>>>>>>> refs/remotes/origin/workspace
 </body>
 </html>
